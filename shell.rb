@@ -23,3 +23,10 @@ loop do
 
   system(input)
 end
+
+# Execute the command in another process to keep the shell alive
+def system(command)
+  fork do
+    exec(command)
+  end
+end
